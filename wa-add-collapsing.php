@@ -17,6 +17,14 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
+if ( !is_admin() && !function_exists('rwmb_meta') ) {
+	wp_die('Error : please install Meta Box plugin.');
+}
+
+if ( !is_admin() && !function_exists('mb_settings_page_load') ) {
+	wp_die('Error : please install Meta Box Settings plugin.');
+}
+
 if ( !class_exists( 'Add_Collapsing_Tax' ) ) :
 
     /**
@@ -88,6 +96,9 @@ if ( !class_exists( 'Add_Collapsing_Tax' ) ) :
             }
         }
 
+        /*
+         * Settings
+         */ 
         public function add_setting_page( $settings_pages ) {
             $settings_pages[] = [
                 'menu_title' => __( 'Collapsing Taxonomies', 'wa-rsfp' ),
@@ -126,7 +137,7 @@ if ( !class_exists( 'Add_Collapsing_Tax' ) ) :
                 'settings_pages' => ['collapsing-taxonomies'],
                 'fields'         => [
                     [
-                        'name'            => __( 'Allowed post.s', 'wa-adco' ),
+                        'name'            => __( 'Allowed post type.s', 'wa-adco' ),
                         'id'              => $prefix . 'allowed_post',
                         'type'            => 'checkbox_list',
                         'inline'          => true,
