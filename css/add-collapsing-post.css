@@ -1,0 +1,57 @@
+/* Update taxonomy edit columns sizes */
+
+td.column-title strong, td.plugin-title strong {
+    display: inline-block;
+}
+
+.wp-admin #wpcontent .wp-list-table tbody tr:not(.no-items) {
+    display: none;
+}
+
+.wp-admin #wpcontent #posts-filter [data-toggle-all] {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wp-admin #wpcontent .wp-list-table tbody tr.level-0,
+.wp-admin #wpcontent .wp-list-table tbody tr.level-2,
+.wp-admin #wpcontent .wp-list-table tbody tr.level-4 {
+    background-color: hsl(180, 6%, 97%);
+}
+
+.wp-admin #wpcontent .wp-list-table tbody tr.level-1,
+.wp-admin #wpcontent .wp-list-table tbody tr.level-3,
+.wp-admin #wpcontent .wp-list-table tbody tr.level-5 {
+    background-color: #fff;
+}
+
+.wp-admin #wpcontent .wp-list-table tbody tr.level-0 {
+    display: table-row;
+}
+
+.wp-admin #wpcontent .wp-list-table tbody tr [data-toggler] {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: -3px 0 0 5px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(0,0,0,.05);
+}
+
+.wp-admin #wpcontent .wp-list-table tbody tr [data-toggler]:hover {
+    background: rgba(0,0,0,.2);
+    transition: 0.5s;
+}
+
+.wp-admin #wpcontent .wp-list-table tbody tr [data-toggler] .dashicons-arrow-right {
+    display: none;
+}
+.wp-admin #wpcontent .wp-list-table tbody tr [data-toggler].close .dashicons-arrow-right {
+    display: inline-block;
+}
+.wp-admin #wpcontent .wp-list-table tbody tr [data-toggler].close .dashicons-arrow-down {
+    display: none;
+}
